@@ -466,7 +466,7 @@
                         <viewLayoutGuide key="safeArea" id="vcO-LY-KMS"/>
                     </view>
                     <connections>
-                        <outlet property="collectionView" destination="X7f-l3-iOR" id="Hl3-w0-u8S"/>
+                        <outlet property="collectionView" destination="X7f-l3-iOR" id="ux1-TN-koI"/>
                         <outlet property="segmentControl" destination="wXe-6i-Q5a" id="aX9-Jl-loR"/>
                     </connections>
                 </viewController>
