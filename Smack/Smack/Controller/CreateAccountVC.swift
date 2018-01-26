@@ -55,9 +55,10 @@ class CreateAccountVC: UIViewController {
         let g = CGFloat(arc4random_uniform(255)) / 255
         let b = CGFloat(arc4random_uniform(255)) / 255
         
-        // Create background colour
+        // Create and set background colour
         bgColor = UIColor(red: r, green: g, blue: b, alpha: 1.0)
-        
+        avatarColor = "[\(r), \(g), \(b), 1]"
+    
         // Set the background color with a fade transition between changes
         UIView.animate(withDuration: 0.25) {
             self.userImg.backgroundColor = self.bgColor

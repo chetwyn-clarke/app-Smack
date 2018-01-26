@@ -30,4 +30,63 @@ class UserDataService {
         self.avatarName = avatarName
     }
     
+    // Need to change the avatarColor string into an actual colour.
+    
+    func returnUIColor(components: String) -> UIColor {
+        
+        // Reference string from MongoDB: [0.164705882352941, 0.596078431372549, 0.00784313725490196, 1]
+        
+        // Create and use a scanner to work through the string.
+        let scanner = Scanner(string: components)
+        
+        // Skip square brackets, commas, and whitespace. While scanning, stop at the comma.
+        let skippedItems = CharacterSet(charactersIn: "[], ")
+        let comma = CharacterSet(charactersIn: ",")
+        scanner.charactersToBeSkipped = skippedItems
+        
+        // Create variables to save values into.
+        
+        var r, g, b, a: NSString?
+        
+        // Execute the scan.
+        
+        scanner.scanUpToCharacters(from: comma, into: &r)
+        scanner.scanUpToCharacters(from: comma, into: &g)
+        scanner.scanUpToCharacters(from: comma, into: &b)
+        scanner.scanUpToCharacters(from: comma, into: &a)
+        
+        // Unwrap the values of type NSString?
+        
+        let defaultColour = UIColor.lightGray
+        
+        guard let rUnwrapped = r else { return defaultColour }
+        guard let gUnwrapped = g else { return defaultColour }
+        guard let bUnwrapped = b else { return defaultColour }
+        guard let aUnwrapped = a else { return defaultColour }
+        
+        // Convert the unwrapped string to a CGFloat by first converting to doubles.
+        
+        let rFloat = CGFloat(rUnwrapped.doubleValue)
+        let gFloat = CGFloat(gUnwrapped.doubleValue)
+        let bFloat = CGFloat(bUnwrapped.doubleValue)
+        let aFloat = CGFloat(aUnwrapped.doubleValue)
+        
+        // Finally, create the UIColor
+        
+        let newUIColor = UIColor(red: rFloat, green: gFloat, blue: bFloat, alpha: aFloat)
+        
+        return newUIColor
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
 }
