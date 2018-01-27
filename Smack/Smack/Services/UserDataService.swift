@@ -78,7 +78,20 @@ class UserDataService {
         return newUIColor
     }
     
-    
+    func logOutUser() {
+        
+        // Need to set all user variables empty and reset AuthService variables.
+        avatarColor = ""
+        avatarName = ""
+        email = ""
+        name = ""
+        id = ""
+        
+        AuthService.instance.isLoggedIn = false
+        AuthService.instance.userEmail = ""
+        AuthService.instance.authToken = ""
+        
+    }
     
     
     
