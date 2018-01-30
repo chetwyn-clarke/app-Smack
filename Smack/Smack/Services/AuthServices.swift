@@ -122,12 +122,7 @@ class AuthService {
             "avatarColor": avatarColor
         ]
         
-        let header = [
-            "Authorization": "Bearer \(AuthService.instance.authToken)",
-            "Content-Type": "application/json; charset=utf-8"
-        ]
-        
-        Alamofire.request(URL_USER_ADD, method: .post, parameters: body, encoding: JSONEncoding.default, headers: header).responseJSON { (response) in
+        Alamofire.request(URL_USER_ADD, method: .post, parameters: body, encoding: JSONEncoding.default, headers: BEARER_HEADER).responseJSON { (response) in
             
             if response.result.error == nil {
                 guard let data = response.data else { return }
@@ -154,9 +149,42 @@ class AuthService {
         }
     }
     
+    func findUserByEmail(completion: @escaping CompletionHandler) {
+        
+        // This function will be used to log in the user: with the authToken and the userEmail we can get the remainder of their information.
+        
+        Alamofire.request("\(URL_USER_BY_EMAIL)\(userEmail)", method: .get, parameters: nil, encoding: JSONEncoding.default, headers: BEARER_HEADER).responseJSON { (response) in
+            
+            if response.result.error == nil {
+                guard let data = response.data else { return }
+                
+                do {
+                    let json = try JSON(data: data)
+                    let id = json["_id"].stringValue
+                    let name = json["name"].stringValue
+                    let email = json["email"].stringValue
+                    let avatarName = json["avatarName"].stringValue
+                    let avatarColor = json["avatarColor"].stringValue
+                    
+                    UserDataService.instance.setUserData(avatarColor: avatarColor, avatarName: avatarName, email: email, name: name, id: id)
+                    
+                    completion(true)
+                } catch {
+                    debugPrint(error)
+                }
+                
+            } else {
+                completion(false)
+                debugPrint(response.result.error as Any)
+            }
+            
+        }
+        
+    }
     
-    
-    
+    func setUserInfo(data: Data) {
+        //TODO: Create this function to handle the JSON parse in createUser and findUserByEmail functions so that I don't violate the DRY principle.
+    }
     
     
 }

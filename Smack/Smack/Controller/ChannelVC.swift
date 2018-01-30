@@ -10,10 +10,12 @@ import UIKit
 
 class ChannelVC: UIViewController {
     
-    // Outlets
+    //MARK: - Properties
+    
     @IBOutlet weak var loginBtn: UIButton!
     @IBOutlet weak var userImg: CircleImage!
     
+    // MARK: - View Configuration
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,6 +26,12 @@ class ChannelVC: UIViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(ChannelVC.userDataDidChange(_:)), name: NOTIF_USER_DATA_DID_CHANGE, object: nil)
         
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        setUpUserInfo()
+    }
+    
+    // MARK: - Actions
     
     @IBAction func loginBtnPressed(_ sender: Any) {
         
@@ -49,6 +57,10 @@ class ChannelVC: UIViewController {
     //MARK: - Functions
     
     @objc func userDataDidChange(_ notif: Notification) {
+        setUpUserInfo()
+    }
+    
+    func setUpUserInfo() {
         // If the user is logged in, set the login button title and image.
         if AuthService.instance.isLoggedIn {
             loginBtn.setTitle(UserDataService.instance.name, for: .normal)

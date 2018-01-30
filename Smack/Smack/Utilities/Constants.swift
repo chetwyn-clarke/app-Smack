@@ -16,6 +16,7 @@ let BASE_URL = "https://chetsmackchat.herokuapp.com/v1/"
 let URL_REGISTER = "\(BASE_URL)account/register"
 let URL_LOGIN = "\(BASE_URL)account/login"
 let URL_USER_ADD = "\(BASE_URL)user/add"
+let URL_USER_BY_EMAIL = "\(BASE_URL)user/byEmail/"
 
 // Constants
 let purplePlaceHolderTextColor = #colorLiteral(red: 0.5960784314, green: 0.6070705652, blue: 0.7882601619, alpha: 0.5)
@@ -36,6 +37,12 @@ let USER_EMAIL = "userEmail"
 
 // Headers
 let HEADER = [
+    "Content-Type": "application/json; charset=utf-8"
+]
+
+// Bearer Header contains the auth token
+let BEARER_HEADER = [
+    "Authorization": "Bearer \(AuthService.instance.authToken)",
     "Content-Type": "application/json; charset=utf-8"
 ]
 
