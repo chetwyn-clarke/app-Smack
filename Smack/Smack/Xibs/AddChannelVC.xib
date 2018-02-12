@@ -20,7 +20,6 @@
             <connections>
                 <outlet property="bgView" destination="i4b-qH-3pk" id="M4z-P0-r4D"/>
                 <outlet property="chanDescription" destination="ClM-XG-TRN" id="a2y-FZ-A4T"/>
-                <outlet property="createChannelPressed" destination="yDK-58-zkQ" id="Whg-5F-lSv"/>
                 <outlet property="nameText" destination="Q1v-ru-Fam" id="f4c-dy-y2z"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -64,6 +63,9 @@
                                     <real key="value" value="5"/>
                                 </userDefinedRuntimeAttribute>
                             </userDefinedRuntimeAttributes>
+                            <connections>
+                                <action selector="createChannelPressed:" destination="-1" eventType="touchUpInside" id="4nm-8A-Kbc"/>
+                            </connections>
                         </button>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Create Channel" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LMM-Za-iNq">
                             <rect key="frame" x="86" y="45" width="163" height="26.5"/>

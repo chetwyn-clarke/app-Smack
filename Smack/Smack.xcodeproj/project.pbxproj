@@ -13,6 +13,7 @@
 		730B2B7A1FFBC80300511C5D /* ChannelVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 730B2B791FFBC80300511C5D /* ChannelVC.swift */; };
 		7311CCF020000D8400D0DF6B /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7311CCEF20000D8400D0DF6B /* Constants.swift */; };
 		7311CCF2200013BD00D0DF6B /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7311CCF1200013BD00D0DF6B /* LoginVC.swift */; };
+		7324C0742031E2F8006D92FC /* SocketService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7324C0732031E2F8006D92FC /* SocketService.swift */; };
 		732A6F3E1FFFC8B2001D0071 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 732A6F3D1FFFC8B2001D0071 /* GradientView.swift */; };
 		735FCB16201CD89700698613 /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 735FCB14201CD89700698613 /* ProfileVC.swift */; };
 		735FCB17201CD89700698613 /* ProfileVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 735FCB15201CD89700698613 /* ProfileVC.xib */; };
@@ -41,6 +42,7 @@
 		730B2B791FFBC80300511C5D /* ChannelVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelVC.swift; sourceTree = "<group>"; };
 		7311CCEF20000D8400D0DF6B /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		7311CCF1200013BD00D0DF6B /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
+		7324C0732031E2F8006D92FC /* SocketService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocketService.swift; sourceTree = "<group>"; };
 		732A6F3D1FFFC8B2001D0071 /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		735FCB14201CD89700698613 /* ProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileVC.swift; sourceTree = "<group>"; };
 		735FCB15201CD89700698613 /* ProfileVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileVC.xib; sourceTree = "<group>"; };
@@ -193,6 +195,7 @@
 				73B37BEE2004E815000BFCC2 /* AuthServices.swift */,
 				73CEF32420067A9900770EF8 /* UserDataService.swift */,
 				738A1F592028D63400A25DA8 /* MessageService.swift */,
+				7324C0732031E2F8006D92FC /* SocketService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -331,6 +334,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7324C0742031E2F8006D92FC /* SocketService.swift in Sources */,
 				735FCB16201CD89700698613 /* ProfileVC.swift in Sources */,
 				73A909392029C659009895D0 /* ChannelCell.swift in Sources */,
 				730B2B7A1FFBC80300511C5D /* ChannelVC.swift in Sources */,
